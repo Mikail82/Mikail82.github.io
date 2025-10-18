@@ -1,2 +1,82 @@
-<h1>Merhaba, ben Mikail!</h1>
-<p>Bloguma hoş geldiniz.</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mikail Yıldız | Yazılım Mühendisi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+    <img src="images/profil.jpg" alt="Mikail Yıldız" class="profile-img" />
+    <h1>Merhaba, ben <span>Mikail Yıldız</span> 👋</h1>
+    <p>Yazılım Mühendisliği öğrencisiyim. Web geliştirme, algoritmalar ve yapay zeka alanlarına ilgi duyuyorum.</p>
+    <a href="#contact" class="btn">Benimle İletişime Geç</a>
+  </header>
+
+  <section class="about">
+    <h2>Hakkımda</h2>
+    <p>
+      Şu anda yazılım mühendisliği okuyorum ve web geliştirme alanında projeler yaparak kendimi geliştiriyorum.
+      HTML, CSS, JavaScript ve Java üzerinde çalışıyorum. 
+      Hedefim kullanıcı dostu, etkileyici ve performanslı yazılımlar geliştirmek.
+    </p>
+  </section>
+
+  <section class="skills">
+    <h2>Yeteneklerim</h2>
+    <ul>
+      <li>💻 Web Geliştirme (HTML, CSS, JS)</li>
+      <li>⚙️ Java & OOP</li>
+      <li>🧠 Dijkstra & Algoritma Analizi</li>
+      <li>🗄️ SQL & Veri Yönetimi</li>
+    </ul>
+  </section>
+
+  <section class="projects">
+    <h2>Projeler</h2>
+    <div class="project-card">
+      <h3>🌐 Kişisel Blog</h3>
+      <p>HTML ve CSS kullanarak oluşturduğum, kendi yazılarımı paylaştığım kişisel blog sayfam.</p>
+      <a href="https://mikail82.github.io" target="_blank">Projeyi Gör</a>
+    </div>
+    <div class="project-card">
+      <h3>⚙️ Dijkstra Kısa Yol Algoritması</h3>
+      <p>Java ile geliştirdiğim, rastgele düğümler arasında en kısa yolu bulan bir grafik uygulaması.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>İletişim</h2>
+    <p>Benimle iletişime geçmek istersen:</p>
+    <ul>
+      <li>📧 <a href="mailto:mikailyldz@example.com">mikailyldz@example.com</a></li>
+      <li>💼 <a href="https://github.com/Mikail82" target="_blank">GitHub Profilim</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Mikail Yıldız | Yazılım Mühendisliği</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    const currentTheme = localStorage.getItem("theme");
+
+    if (currentTheme === "dark") {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "🌞";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const isDark = body.classList.contains("dark-mode");
+      toggleBtn.textContent = isDark ? "🌞" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>
+
